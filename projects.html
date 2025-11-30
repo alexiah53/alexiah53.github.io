@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects • Dr. Alexia M. Hernández</title>
+  <style>
+    :root {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      color-scheme: light;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #f6f7fb;
+      color: #1f1f28;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      background: #ffffffcc;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0.9rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .logo {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: #111827;
+      text-decoration: none;
+    }
+
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: #4b5563;
+      padding-bottom: 0.2rem;
+      border-bottom: 1px solid transparent;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+
+    nav a:hover {
+      color: #111827;
+      border-color: #111827;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.2rem 3rem;
+      flex: 1;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #4b5563;
+      max-width: 42rem;
+    }
+
+    .card-list {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.4rem;
+    }
+
+    .card {
+      border-radius: 1rem;
+      padding: 1.1rem 1.1rem 1rem;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      background: #ffffff;
+    }
+
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: #111827;
+    }
+
+    .card-meta {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9ca3af;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
+    }
+
+    footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.2rem 2rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">DR. ALEXIA M. HERNÁNDEZ</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1>Projects</h1>
+    <p>
+      A brief overview of selected projects. You can refine or expand these descriptions later.
+    </p>
+
+    <div class="card-list">
+      <article class="card">
+        <div class="card-meta">Industry Research</div>
+        <div class="card-title">FAANG Speech Analysis Project</div>
+        <p>
+          Placeholder text for a large-scale speech analysis initiative. You can later highlight data scale, methods,
+          and key insights.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-meta">AI Start-Up</div>
+        <div class="card-title">AI Start-Up: AI Generated Text Content</div>
+        <p>
+          Placeholder for work evaluating or designing AI-generated text for products, user experience, or content workflows.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-meta">Forensic Linguistics</div>
+        <div class="card-title">Entrepreneurial Forensic Linguistics Project</div>
+        <p>
+          Placeholder for applying forensic linguistic methods in an entrepreneurial or client-facing context.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-meta">Communication & Feedback</div>
+        <div class="card-title">Innovative Public Speaking Feedback Project</div>
+        <p>
+          Placeholder for a project focused on analyzing spoken performance and providing structured feedback to speakers.
+        </p>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Dr. Alexia M. Hernández. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

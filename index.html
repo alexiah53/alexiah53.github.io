@@ -1,1 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Alexia M. Hernández • Portfolio</title>
+  <style>
+    :root {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      color-scheme: dark;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #050609;
+      color: #f5f5f5;
+      min-height: 100vh;
+    }
+
+    /* Top navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(5, 6, 9, 0.9);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0.9rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .logo {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: #e5e5f0;
+    }
+
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: #c4c4d4;
+      padding-bottom: 0.15rem;
+      border-bottom: 1px solid transparent;
+      transition: color 0.15s ease, border-color 0.15s ease;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Layout */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.2rem 3rem;
+    }
+
+    section {
+      padding: 3rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    h1, h2 {
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.03em;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      color: #bebed0;
+    }
+
+    p {
+      margin-top: 0.4rem;
+      line-height: 1.6;
+      font-size: 0.98rem;
+      color: #d7d7e4;
+    }
+
+    .tagline {
+      margin-top: 0.7rem;
+      font-size: 1.03rem;
+      color: #f5f5ff;
+      max-width: 36rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.9rem;
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #c3c3d3;
+    }
+
+    .card-list {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.1rem;
+    }
+
+    .card {
+      border-radius: 1rem;
+      padding: 1.1rem 1.1rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: rgba(16, 18, 25, 0.95);
+    }
+
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .card-meta {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #a5a5ba;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Contact form */
+    .contact-form {
+      margin-top: 1rem;
+      max-width: 520px;
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .field {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    label {
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #b9b9c9;
+    }
+
+    input,
+    textarea {
+      background: #080a10;
+      border-radius: 0.6rem;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 0.6rem 0.75rem;
+      font-size: 0.95rem;
+      color: #f5f5ff;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(153, 176, 255, 0.9);
+      box-shadow: 0 0 0 1px rgba(153, 176, 255, 0.45);
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 0.6rem 1.4rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: #99b0ff;
+      color: #050609;
+      justify-self: flex-start;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+    }
+
+    button:hover {
+      background: #b4c3ff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+      transform: translateY(-1px);
+    }
+
+    button:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    .fine-print {
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      color: #9b9bb0;
+    }
+
+    footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.2rem 2rem;
+      font-size: 0.8rem;
+      color: #8c8c9b;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.7rem;
+      }
+      .nav-inner {
+        padding-inline: 1rem;
+      }
+      nav a {
+        margin-left: 0.7rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-inner">
+      <div class="logo">DR. ALEXIA M. HERNÁNDEZ</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home">
+      <h1>Hi, I’m Dr. Alexia M. Hernández.</h1>
+      <p class="tagline">
+        A short one-line description can go here later — for now, you can think of this as your placeholder intro.
+      </p>
+
+      <div class="pill-row">
+        <span class="pill">Speech & Language</span>
+        <span class="pill">Forensic Linguistics</span>
+        <span class="pill">AI & Innovation</span>
+        <span class="pill">Public Speaking</span>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        This is a placeholder for your About section. You can come back later and describe your background, research,
+        teaching, entrepreneurial work, and the kinds of collaborations you’re interested in.
+      </p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <p>
+        A selection of projects across speech, AI, and forensic linguistics. You can expand or revise these descriptions
+        whenever you’re ready.
+      </p>
+
+      <div class="card-list">
+        <article class="card">
+          <div class="card-meta">Industry Research</div>
+          <div class="card-title">FAANG Speech Analysis Project</div>
+          <p>
+            Placeholder text for now — this can highlight large-scale speech data work, insights you surfaced, and
+            how it informs product or research decisions.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-meta">AI Start-Up</div>
+          <div class="card-title">AI Start-Up: AI Generated Text Content</div>
+          <p>
+            A brief placeholder where you can later describe your role in evaluating, designing, or deploying
+            AI-generated text experiences in a start-up environment.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-meta">Forensic Linguistics</div>
+          <div class="card-title">Entrepreneurial Forensic Linguistics Project</div>
+          <p>
+            Space for a concise summary of how you’ve applied forensic linguistic methods in entrepreneurial or
+            client-facing settings.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-meta">Communication & Feedback</div>
+          <div class="card-title">Innovative Public Speaking Feedback Project</div>
+          <p>
+            Placeholder for a project focused on analyzing speech, delivery, and performance to provide structured,
+            actionable feedback for speakers.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Use the form below to send an inquiry. Your message will be routed privately without displaying my email address.
+      </p>
+
+      <!-- To make this form actually send to you, connect it to a service like Formspree and replace the "action" URL. -->
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/your-form-id"
+        method="POST"
+      >
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="_replyto" type="email" required />
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit">Send Inquiry</button>
+      </form>
+
+      <p class="fine-print">
+        Note: you’ll configure where these messages go behind the scenes, so your personal email never needs to appear on this page.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Dr. Alexia M. Hernández. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

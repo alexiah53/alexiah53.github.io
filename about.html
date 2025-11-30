@@ -65,6 +65,13 @@
       flex: 1;
     }
 
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2.5rem;
+      align-items: start;
+    }
+
     h1 {
       font-size: 2rem;
       margin-bottom: 0.8rem;
@@ -75,8 +82,21 @@
       line-height: 1.7;
       font-size: 1rem;
       color: #4b5563;
-      max-width: 42rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .about-photo {
+      justify-self: center;
+    }
+
+    .about-photo img {
+      display: block;
+      max-width: 230px;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+      background: #ffffff;
+      object-fit: cover;
     }
 
     footer {
@@ -85,6 +105,17 @@
       padding: 0 1.2rem 2rem;
       font-size: 0.8rem;
       color: #6b7280;
+    }
+
+    @media (max-width: 800px) {
+      .about-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .about-photo {
+        order: -1;
+      }
+      h1 { font-size: 1.8rem; }
     }
   </style>
 </head>
@@ -102,43 +133,37 @@
   </header>
 
   <main>
-    <h1>About Dr. Alexia M. Hernández</h1>
+    <section class="about-layout">
+      <div class="about-text">
+        <h1>About Dr. Alexia M. Hernández</h1>
 
-    <p>
-      Dr. Alexia M. Hernández is a linguistic consultant specializing in AI applications, with 
-      expertise in speech variation, accents, and human–machine communication. Her work focuses on 
-      helping organizations develop AI systems that understand the diversity of human voice and text.
-    </p>
+        <p>
+          Dr. Alexia M. Hernández is a linguistic consultant specializing in AI applications, with 
+          expertise in speech variation, accents, and human–machine communication. She helps 
+          organizations design AI systems that better reflect the diversity of human voice and text.
+        </p>
 
-    <p>
-      Alexia holds an MBA from the Wharton School and a PhD in Linguistics from Stanford University, 
-      where she researched how people produce and perceive speech variation and accents—work that 
-      integrates sociolinguistics, cognitive science, and experimental methods. She graduated 
-      <em>summa cum laude</em> and Phi Beta Kappa from Princeton University with a BA in Linguistics, 
-      earning top departmental prizes for her research.
-    </p>
+        <p>
+          Alexia holds an MBA from the Wharton School and a PhD in Linguistics from Stanford University, 
+          where she researched how people produce and perceive speech variation and accents. She 
+          graduated <em>summa cum laude</em> and Phi Beta Kappa from Princeton University with a BA 
+          in Linguistics, earning top departmental prizes for her research.
+        </p>
 
-    <p>
-      Her research has been presented at leading conferences such as the Linguistic Society of America, 
-      Psychonomics, and New Ways of Analyzing Variation, and published in respected venues including 
-      the <em>Journal of Cognitive Science</em>. Her work advances understanding of how listeners make 
-      rapid inferences based on voice alone, and how these perceptual processes shape real-world 
-      communication and technology design.
-    </p>
+        <p>
+          At LexAI Consulting, she collaborates with product, research, and strategy teams to evaluate 
+          AI-generated language, analyze speech data, improve voice interfaces, and design evaluation 
+          frameworks grounded in real human communication. Her work combines analytic rigor, 
+          linguistic depth, and product-aligned thinking for organizations building language- and 
+          voice-based AI.
+        </p>
+      </div>
 
-    <p>
-      At LexAI Consulting, Alexia brings this expertise into applied settings—collaborating with 
-      product, research, and strategy teams to evaluate AI-generated language, analyze speech data, 
-      improve voice interfaces, and design evaluation frameworks that reflect real human communication. 
-      Her work bridges rigorous linguistic research with practical, user-centered recommendations.
-    </p>
-
-    <p>
-      With experience across academia, tech, AI strategy, and language-focused research roles, Alexia 
-      offers a rare combination of analytic rigor, linguistic depth, and product-aligned thinking. She 
-      works with organizations seeking clarity in complex language questions, better human–AI interaction, 
-      and linguistically informed system design.
-    </p>
+      <div class="about-photo">
+        <!-- Reuse the same headshot on the About page -->
+        <img src="headshot.jpg" alt="Portrait of Dr. Alexia M. Hernández" />
+      </div>
+    </section>
   </main>
 
   <footer>
